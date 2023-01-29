@@ -10,8 +10,10 @@
 </head>
 
 <header>
-  <div class="nav__shadow"></div>
+
   <nav class="nav nav__mobile">
+
+    <div class="nav__mobile-shadow nav__shadow-active"></div>
 
     <div class="nav__mobile-wrapper">
       <div class="nav__mobile-logo">
@@ -25,22 +27,46 @@
           </span>
         </button>
       </div>
-
     </div>
 
     <div class="nav__mobile-list">
-      <a href="" class="nav__mobile-list-item"><span class="nav__mobile-list-item-span">01. </span>About me</a>
-      <a href="" class="nav__mobile-list-item"><span class="nav__mobile-list-item-span">02. </span>Experience</a>
-      <a href="" class="nav__mobile-list-item"><span class="nav__mobile-list-item-span">03. </span>Work</a>
+      <a href="" class="nav__mobile-list-item"><span class="nav__mobile-list-item-span">01.</span>About me</a>
+      <a href="" class="nav__mobile-list-item"><span class="nav__mobile-list-item-span">02.</span>Experience</a>
+      <a href="" class="nav__mobile-list-item"><span class="nav__mobile-list-item-span">03.</span>Work</a>
       <a href="" class="nav__mobile-list-item"><span class="nav__mobile-list-item-span">04. </span>Contact</a>
     </div>
 
-
   </nav>
+
+  <nav class="nav nav-desktop">
+
+    <div class="nav__desktop-wrapper">
+      <div class="nav__desktop-logo">
+        <i class="fa-solid fa-code nav__desktop-logo-icon"></i>
+      </div>
+
+      <div class="nav__desktop-list">
+        <a href="" class="nav__desktop-list-item"><span class="nav__desktop-list-item-span">01.</span>About me</a>
+        <a href="" class="nav__desktop-list-item"><span class="nav__desktop-list-item-span">02.</span>Experience</a>
+        <a href="" class="nav__desktop-list-item"><span class="nav__desktop-list-item-span">03.</span>Work</a>
+        <a href="" class="nav__desktop-list-item"><span class="nav__desktop-list-item-span">04.</span>Contact</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="sentence">
+    <h1 class="sentence__h1">Hi! My name is Marcin and I'm creator of this page</h1>
+    <p class="sentence_p">I'm accountant/finance controller/amateur programmer</p>
+  </div>
+
 </header>
 
 <body>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <script src="./dist/js/main.min.js"></script>
 </body>
 

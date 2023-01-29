@@ -1,0 +1,13 @@
+@use 'colors' as *;
+
+@mixin logo {
+	font-size: 4rem;
+	color: $bright-green;
+}
+
+@mixin navItem {
+	text-decoration: none;
+	color: $light-blue;
+	padding-bottom: 3rem;
+	font-size: 3rem;
+}

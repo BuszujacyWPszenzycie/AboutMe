@@ -1,4 +1,5 @@
 @use 'colors' as *;
+@use 'mixin' as *;
 
 *,
 *::before,
@@ -22,21 +23,22 @@ body {
 
 .nav {
 	position: relative;
-	&__shadow {
-		display: none;
-		position: absolute;
-		height: 100vh;
-		background-color: rgba(0, 0, 0, 0.4);
-		width: 500px;
-		align-items: flex-end;
-		right: 0;
-		transition: display 0.5s;
 
-		&-active {
-			display: block;
-		}
-	}
 	&__mobile {
+		&-shadow {
+			display: none;
+			position: absolute;
+			height: 100vh;
+			background-color: rgba(0, 0, 0, 0.4);
+			width: 500px;
+			align-items: flex-end;
+			right: 0;
+			transition: display 0.5s;
+
+			&-active {
+				display: block;
+			}
+		}
 		&-wrapper {
 			display: flex;
 			justify-content: space-between;
@@ -72,8 +74,75 @@ body {
 
 		&-logo {
 			&-icon {
-				font-size: 4rem;
-				color: $bright-green;
+				@include logo;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.nav {
+		&__mobile {
+			display: none;
+		}
+
+		&__desktop {
+			&-list {
+				&-item {
+					@include navItem;
+					font-size: 2rem;
+					padding-right: 0.5em;
+
+					&-span {
+						color: $bright-green;
+					}
+				}
+			}
+			&-wrapper {
+				display: flex;
+				justify-content: space-between;
+				padding: 3em;
+			}
+			&-logo {
+				&-icon {
+					@include logo;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.nav {
+		&__desktop {
+			&-list {
+				&-item {
+					@include navItem;
+					font-size: 2.3rem;
+					padding-right: 1em;
+
+					&-span {
+						color: $bright-green;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.nav {
+		&__desktop {
+			&-list {
+				&-item {
+					@include navItem;
+					font-size: 3rem;
+					padding-right: 1em;
+
+					&-span {
+						color: $bright-green;
+					}
+				}
 			}
 		}
 	}
