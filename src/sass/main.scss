@@ -1,5 +1,6 @@
 @use 'colors' as *;
 @use 'mixin' as *;
+@use 'animations' as *;
 
 *,
 *::before,
@@ -21,15 +22,48 @@ body {
 	background-color: $dark-blue;
 }
 
+.page-wrapper {
+	max-width: 1200px;
+	margin: auto auto;
+}
+
+.hello {
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		width: 100wh;
+		height: 100vh;
+		background-color: $bright-green;
+		color: $dark-blue;
+		font-size: 5rem;
+		text-align: center;
+
+		&-deactivate {
+			display: none;
+		}
+
+		&-animation {
+			animation: firstPageAnimation 2s forwards;
+		}
+	}
+}
+
 .nav {
 	position: relative;
 
+	&__desktop {
+		display: none;
+	}
+
 	&__mobile {
+		z-index: 100;
 		&-shadow {
 			display: none;
 			position: absolute;
 			height: 100vh;
-			background-color: rgba(0, 0, 0, 0.4);
+			background-color: rgba(0, 0, 0, 0.8);
 			width: 500px;
 			align-items: flex-end;
 			right: 0;
@@ -80,8 +114,30 @@ body {
 	}
 }
 
+.sentence {
+	position: relative;
+	&__box {
+		position: absolute;
+		color: $light-blue;
+		bottom: 200px;
+		padding-left: 5rem;
+
+		&-h1 {
+			padding-bottom: 3rem;
+		}
+
+		&-p {
+			color: $blue-gray;
+			padding-bottom: 1rem;
+		}
+	}
+}
+
 @media (min-width: 768px) {
 	.nav {
+		&__desktop {
+			display: block;
+		}
 		&__mobile {
 			display: none;
 		}
@@ -110,6 +166,18 @@ body {
 			}
 		}
 	}
+
+	.sentence {
+		&__box {
+			&-h1 {
+				font-size: 4rem;
+			}
+
+			&-p {
+				font-size: 2rem;
+			}
+		}
+	}
 }
 
 @media (min-width: 992px) {
@@ -125,6 +193,18 @@ body {
 						color: $bright-green;
 					}
 				}
+			}
+		}
+	}
+
+	.sentence {
+		&__box {
+			&-h1 {
+				font-size: 5rem;
+			}
+
+			&-p {
+				font-size: 2.5rem;
 			}
 		}
 	}
@@ -147,3 +227,13 @@ body {
 		}
 	}
 }
+
+// @keyframes firstPageAnimation {
+// 	from {
+// 		opacity: 1;
+// 	}
+
+// 	to {
+// 		opacity: 0;
+// 	}
+// }
