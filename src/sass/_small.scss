@@ -1,0 +1,47 @@
+@media (min-width: 768px) {
+	.nav {
+		&__desktop {
+			display: block;
+			height: 100vh;
+		}
+		&__mobile {
+			display: none;
+		}
+
+		&__desktop {
+			&-list {
+				&-item {
+					@include navItem;
+					font-size: 2rem;
+					padding-right: 0.5em;
+
+					&-span {
+						color: $bright-green;
+					}
+				}
+			}
+			&-wrapper {
+				display: flex;
+				justify-content: space-between;
+				padding: 3em;
+			}
+			&-logo {
+				&-icon {
+					@include logo;
+				}
+			}
+		}
+	}
+
+	.sentence {
+		&__box {
+			&-h1 {
+				font-size: 4rem;
+			}
+
+			&-p {
+				font-size: 2rem;
+			}
+		}
+	}
+}

@@ -25,6 +25,30 @@ body {
 .page-wrapper {
 	max-width: 1200px;
 	margin: auto auto;
+	padding-top: 8rem;
+}
+
+.section {
+	&__span {
+		color: $bright-green;
+	}
+	&__title {
+		padding-bottom: 5rem;
+		padding-left: 2rem;
+		color: $light-blue;
+		font-size: 2rem;
+		font-weight: 400;
+
+		&::after {
+			background-color: $bright-green;
+			content: '';
+			display: inline-block;
+			height: 1px;
+			position: relative;
+			vertical-align: middle;
+			width: 40%;
+		}
+	}
 }
 
 .hello {
@@ -133,107 +157,33 @@ body {
 	}
 }
 
-@media (min-width: 768px) {
-	.nav {
-		&__desktop {
-			display: block;
-		}
-		&__mobile {
-			display: none;
-		}
+.about {
+	&__box {
+		display: grid;
+		grid-template-columns: 1;
 
-		&__desktop {
-			&-list {
-				&-item {
-					@include navItem;
-					font-size: 2rem;
-					padding-right: 0.5em;
-
-					&-span {
-						color: $bright-green;
-					}
-				}
-			}
-			&-wrapper {
-				display: flex;
-				justify-content: space-between;
-				padding: 3em;
-			}
-			&-logo {
-				&-icon {
-					@include logo;
-				}
-			}
-		}
-	}
-
-	.sentence {
-		&__box {
-			&-h1 {
-				font-size: 4rem;
-			}
-
+		&-info {
+			padding-bottom: 5rem;
+			padding-left: 2rem;
+			color: $light-blue;
+			// grid-column: 1/3;
 			&-p {
-				font-size: 2rem;
+				padding-bottom: 2rem;
+			}
+		}
+		&-picture {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&-img {
+				max-width: 450px;
+				border-radius: 8px;
+				perspective: 1000px;
 			}
 		}
 	}
 }
 
-@media (min-width: 992px) {
-	.nav {
-		&__desktop {
-			&-list {
-				&-item {
-					@include navItem;
-					font-size: 2.3rem;
-					padding-right: 1em;
-
-					&-span {
-						color: $bright-green;
-					}
-				}
-			}
-		}
-	}
-
-	.sentence {
-		&__box {
-			&-h1 {
-				font-size: 5rem;
-			}
-
-			&-p {
-				font-size: 2.5rem;
-			}
-		}
-	}
-}
-
-@media (min-width: 1200px) {
-	.nav {
-		&__desktop {
-			&-list {
-				&-item {
-					@include navItem;
-					font-size: 3rem;
-					padding-right: 1em;
-
-					&-span {
-						color: $bright-green;
-					}
-				}
-			}
-		}
-	}
-}
-
-// @keyframes firstPageAnimation {
-// 	from {
-// 		opacity: 1;
-// 	}
-
-// 	to {
-// 		opacity: 0;
-// 	}
-// }
+@import './small';
+@import './medium';
+@import './large';

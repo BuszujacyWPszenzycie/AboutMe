@@ -1,0 +1,17 @@
+@media (min-width: 1200px) {
+	.nav {
+		&__desktop {
+			&-list {
+				&-item {
+					@include navItem;
+					font-size: 3rem;
+					padding-right: 1em;
+
+					&-span {
+						color: $bright-green;
+					}
+				}
+			}
+		}
+	}
+}

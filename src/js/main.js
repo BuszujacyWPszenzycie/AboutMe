@@ -3,8 +3,6 @@ const navMobileList = document.querySelector('.nav__mobile-list')
 const navShadow = document.querySelector('.nav__mobile-shadow')
 const helloPage = document.querySelector('.hello__wrapper')
 
-console.log(helloPage)
-
 const handleBurgerBtn = () => {
 	hamburgerBtn.classList.toggle('is-active')
 	navMobileList.classList.toggle('nav__mobile-list-active')
