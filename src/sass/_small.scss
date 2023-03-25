@@ -45,3 +45,16 @@
 		}
 	}
 }
+
+.about {
+	&__box {
+		grid-template-columns: repeat(2, 1fr);
+		&-info {
+			grid-column: 1/2;
+		}
+
+		// &-picture {
+		// 	// grid-column: 2/3;
+		// }
+	}
+}
